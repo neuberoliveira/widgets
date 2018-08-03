@@ -1,0 +1,13 @@
+<?php if ($this->previewMode): ?>
+
+    <div class="form-control">
+        <?= $value ?>
+    </div>
+
+<?php else: ?>
+    <select id="<?= $this->getId('input') ?>" name="<?= $name ?>" class="form-control custom-select" name="language">
+        <?php foreach ($icons as $icon=>$label): ?>
+            <option value="<?= $icon ?>" <?= $icon==$value ?'selected':null ?>><?= e($label) ?></option>
+        <?php endforeach ?>
+    </select>
+<?php endif ?>
